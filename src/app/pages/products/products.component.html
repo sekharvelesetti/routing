@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let p of getData()">
+          <div class="card mb-5" style="width: 18rem;">
+            <img class="mx-auto d-block img-responsive img-fluid" src="{{p.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{p.name}}</h5>
+              <h6 class="card-title">RS {{p.price}}</h6>
+              <p class="card-text">if you buy this pack your eligible for prime user,you have eligible  for 70% discount!!!</p>
+              <a href="javascript:void()" class="btn btn-primary" (click)="addToCart(p)">Buy</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
