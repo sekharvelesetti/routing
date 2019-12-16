@@ -20,4 +20,13 @@ export class ProductsComponent implements OnInit {
 
   }
 
+
+
+  addToCart(p:any){
+      
+        this.service.items.push(p);
+     
+   
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,25 +12,25 @@ export class CartComponent implements OnInit {
  
 
 
-sekhars=[{name:"sekhar",price:220,count:1}]
-nam='';
-price:number;
-count:number;
+// sekhars=[{name:"sekhar",price:220,count:1}]
+// nam='';
+// price:number;
+// count:number;
 
 
 
 
 
- myapp(){
+//  myapp(){
 
-  //  this.status =!this.status;
-   this.sekhars.push({name:this.nam,price:this.price,count:this.count})
+//   //  this.status =!this.status;
+//    this.sekhars.push({name:this.nam,price:this.price,count:this.count})
 
-   this.nam=null,
-   this.price=null,
-   this.count=null
+//    this.nam=null,
+//    this.price=null,
+//    this.count=null
    
- }
+//  }
    
   
 
@@ -43,15 +44,18 @@ count:number;
 
 
  delete(){
-   this.sekhars.splice(1,1)
+   this.getitems().splice(1,1);
  } 
 //   update(){
 //     alert("Function could complete")
 //  }
 
-  constructor() { }
+  constructor(private ser:ServiceService) { }
 
   ngOnInit() {
+  }
+  getitems(){
+    return this.ser.items
   }
 
 }
