@@ -8,54 +8,32 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class CartComponent implements OnInit {
   title = 'sidebar';
-  status =true;
+ count=0
  
+items=[];
+cart={};
 
 
-// sekhars=[{name:"sekhar",price:220,count:1}]
-// nam='';
-// price:number;
-// count:number;
-
-
-
-
-
-//  myapp(){
-
-//   //  this.status =!this.status;
-//    this.sekhars.push({name:this.nam,price:this.price,count:this.count})
-
-//    this.nam=null,
-//    this.price=null,
-//    this.count=null
-   
-//  }
-   
-  
-
-  //  if(this.status===false){
-  //    this.status=true
-  //  }else{
-  //    this.status=false
-  //  }
-
- 
-
-
- delete(){
-   this.getitems().splice(1,1);
- } 
-//   update(){
-//     alert("Function could complete")
-//  }
 
   constructor(private ser:ServiceService) { }
 
   ngOnInit() {
+    this.cart=this.ser.cart;
+    this.items = this.ser.items;
+   
   }
-  getitems(){
-    return this.ser.items
-  }
+  delete(i: number){
+    this.items.splice(i,1);
+  } 
+   q:number=0
+   total(){
+     this.q=0
+     for (var val of this.ser.products) {
+       this.q+=(val.price*val.quantity);
+     
+     
 
-}
+  }
+ 
+}    
+} 

@@ -23,12 +23,19 @@ export class ProductsComponent implements OnInit {
 
 
   addToCart(p:any){
-      
-        this.service.items.push(p);
-        this.service.items[p.id]["quantity"] = this.service.items[p.id]["quantity"]+1;
-      //  this.service.items[p.id]["total"] = this.service.items[p.id]["quantity"]*p.price;
+
+  
+     if(this.service.cart.hasOwnProperty(p.id)){
+       this.service.cart[p.id]["quantity"]+=1;
      
-   
+    }else{
+       this.service.cart[p.id] = {quantity:1,image:p.image,name:p.name,price:p.price,total:p.price,cost:p.cost,discount:p.discount};
+       this.service.items.push(p.id);
+       console.log(p.id)
+      } 
+
+  
+  
   }
 
 }

@@ -54,21 +54,23 @@
       <th>PRODUCT NAME</th>
       <th>PRODUCT</th>
       <th>PRICE</th>
-      
       <th>quantity</th>
-      <th>total</th>
+      <th>item cost</th>
+      <th>grand total</th>
     </tr>
-    <tr *ngFor="let item of getitems() | filter:nam  let i=index">
+    <tr *ngFor="let item of items   let i=index">
       <td>{{i+1}}</td>
-      <td>{{item.name}}</td>
-      <img src="{{item.image}}">
-      <td>{{item.price}}</td>
+      <td>{{cart[item].name}}</td>
+      <img src="{{cart[item].image}}">
+      <td> {{cart[item].cost}}</td> 
+      <td><input type="number" min="1" (click)="total()" [(ngModel)]="cart[item].quantity"></td>
+      <td>{{cart[item].cost*cart[item].quantity}} </td>
+      <td><button class="btn btn-danger" (click)="delete()">delete</button></td>
       
-      <td>{{item.quantity}}</td>
-      <td>Rs{{item.price*item.quantity}}</td> 
-      <td><button class="btn btn-danger" (click)="delete()">Delete</button></td>
-      <td><i class="far fa-trash-alt"></i><button  class="btn btn-info" (click)="update()"routerLink='/home' >deatils</button></td>
-    </tr>
-  
+   </tr>
+   <tr>
+     <td>{{q}}</td>
+   </tr>
   </table>
+
   </div>

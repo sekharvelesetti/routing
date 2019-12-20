@@ -13,17 +13,19 @@ imgsrc6="https://rukminim1.flixcart.com/image/495/594/shirt/g/d/c/hlsh009033-dar
 imgsrc7="https://rukminim1.flixcart.com/image/495/594/k2m6ufk0/sandal/r/b/p/ss0119g-7-sparx-blackgrey-original-imafhxn5yf2dfsdj.jpeg?q=50"
 imgsrc8="https://rukminim1.flixcart.com/image/495/594/jufu4y80/wallet-card-wallet/2/d/u/swp14514-swp14514-wallet-hidelink-original-imaffkj7ebhs8xwx.jpeg?q=50"
 products=[
-  {id:1,name:"hooded tssirts",price:220,image:this.imgsrc1,quantity:1},
-  {id:2,name:"v-neck tshirts",price:500,image:this.imgsrc2,quantity:1},
-  {id:3,name:"women wear",price:400,image:this.imgsrc3,quantity:1},
-  {id:4,name:"round neck tshirts",price:200,image:this.imgsrc4,quantity:1},
-  {id:5,name:"shirts",price:150,image:this.imgsrc6,quantity:5},
-  {id:6,name:"perfume",price:100,image:this.imgsrc5,quantity:1},
-  {id:5,name:"slipers&flotters",price:150,image:this.imgsrc7,quantity:1},
-  {id:6,name:"wallets",price:100,image:this.imgsrc8,quantity:1}
+  {id:1,name:"hooded tshirts",price:2200,image:this.imgsrc1,quantity:1,dis:80,discount:20/100,cost:440},
+  {id:2,name:"v-neck tshirts",price:5000,image:this.imgsrc2,quantity:1,dis:20,discount:80/100,cost:4000},
+  {id:3,name:"women wear",price:4000,image:this.imgsrc3,quantity:1,dis:60,discount:40/100,cost:1600},
+  {id:4,name:"round neck tshirts",price:2000,image:this.imgsrc4,quantity:1,dis:66,discount:34/100,cost:680},
+  {id:5,name:"shirts",price:1500,image:this.imgsrc6,quantity:5,dis:76,discount:24/100,cost:360},
+  {id:6,name:"perfume",price:1000,image:this.imgsrc5,quantity:1,dis:66,discount:34/100,cost:340},
+  {id:7,name:"slipers&flotters",price:1500,image:this.imgsrc7,quantity:1,dis:48,discount:52/100,cost:780},
+  {id:8,name:"wallets",price:1000,image:this.imgsrc8,quantity:1,dis:30,discount:70/100,cost:700}
 
 ]
-items=[]
+items=[];
+cart={};
+// item={}
 
   constructor() { }
  
